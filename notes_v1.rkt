@@ -1,0 +1,60 @@
+#lang sicp
+
+(define (square x) (* x x))
+
+(define (sum-of-squares x y)
+  (+ (square x) (square y)))
+
+;(sum-of-squares 3 4)
+
+;(define (absolute x)
+;  (cond
+;    ((> x 0) x)
+;    ((= x 0) 0)
+;    ((< x 0) (- x))
+;    ))
+
+;(define (absolute x)
+;  (cond
+;    ((< x 0) (- x))
+;    (else x)))
+
+(define (absolute x)
+  (if (< x 0)
+      (- x)
+      x
+  ))
+
+;(absolute 7)
+
+(define (greater-equal x y)
+  (not (< x y)))
+
+;(greater-equal 4 4)
+
+;===========================
+
+;Newtons method for square-root approximations
+; (For my understanding)
+
+;Given a guess, improve the guess up to a tolerance:
+;e.g. to get the square root of 2,
+;we make the guess of 1
+;
+;
+;Step 1. Get the quotient. The quotient is:
+;(2 / 1)
+;
+;so
+;
+;current_quotient = (number_to_square / current guess)
+;
+;Step 2. Average the quotient with current guess.
+;Like:
+;
+;((2 + 1) / 2) = 1.5
+;
+;so
+;
+;next_guess = ((current_quotient + current_guess) / 2)
+
